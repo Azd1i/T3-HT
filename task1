@@ -1,0 +1,16 @@
+n = int(input())
+m = int(input())
+one_list = m * [int(i) for i in range(1, n + 1)]
+two_list = [' ']
+three_list = []
+count = 0
+while two_list[-1] != 1:
+    two_list.clear()
+    for j in range(count, m + count):
+        two_list.append(one_list[j])
+        count += 1
+    two_list_copy = two_list.copy()
+    three_list.append(two_list_copy)
+    count -= 1
+for k in range(len(three_list)):
+    print(three_list[k][0], end='')
